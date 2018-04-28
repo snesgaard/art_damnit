@@ -2,7 +2,7 @@ sprites=$(wildcard sprite/*.aseprite)
 jsons=$(addprefix ./build/, $(notdir $(sprites:.aseprite=.json)))
 atlas=./atlas.png
 info=./index.lua
-aseprite=/home/sebastian/.steam/steam/steamapps/common/Aseprite/aseprite
+aseprite=~/.steam/steam/steamapps/common/Aseprite/aseprite
 texatlas_script=/repos/artwork_n_stuff/texatlas.py
 
 all: create_build_dirs $(atlas)

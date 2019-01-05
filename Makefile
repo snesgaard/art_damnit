@@ -3,7 +3,7 @@ jsons=$(addprefix ./build/, $(notdir $(sprites:.aseprite=.json)))
 atlas=./atlas.png
 info=./index.lua
 aseprite=~/.steam/steam/steamapps/common/Aseprite/aseprite
-texatlas_script=/repos/artwork_n_stuff/texatlas.py
+texatlas_script=../texatlas.py
 
 all: create_build_dirs $(atlas)
 

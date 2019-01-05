@@ -2,7 +2,7 @@ sprites=$(addprefix ./sprites/, lab.aseprite windows.aseprite shelves.aseprite)
 jsons=$(addprefix ./build/, $(notdir $(sprites:.aseprite=.json)))
 atlas=./atlas.png
 aseprite=~/.steam/steam/steamapps/common/Aseprite/aseprite
-texatlas_script=../../modules/im_stack.py
+texatlas_script=../im_stack.py
 
 all: create_build_dirs $(atlas)
 

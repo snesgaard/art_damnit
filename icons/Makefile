@@ -1,4 +1,6 @@
 ims=$(wildcard image/*.png)
+sprites=$(wildcard image/*.aseprite)
+jsons=$(addprefix ./build/, $(notdir $(sprites:.aseprite=.json)))
 atlas=./atlas.png
 info=./index.lua
 aseprite=~/.steam/steam/steamapps/common/Aseprite/aseprite
@@ -9,10 +11,10 @@ all: create_build_dirs $(atlas)
 debug:
 	@echo $(ims)
 
-$(atlas): $(ims)
+$(atlas): $(jsons) $(ims)
 	@python $(texatlas_script) $^ -i $(info) -s $(atlas)
 
-build/%.json: sprite/%.aseprite
+build/%.json: image/%.aseprite
 	@$(aseprite) -b $< --sheet $(@:.json=.png) --data $@ \
 	           --list-slices  --trim --inner-padding 1 --format json-array\
 	           --list-tags

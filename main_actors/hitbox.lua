@@ -1,5 +1,6 @@
 return {
     fencer_dash = {attack = {from = 5, to = 5}},
+    fencer_attack = {attack = {from = 6, to = 6}},
     fencer_cast = {cast = {from = 9, to = 9}},
     gunner_cast = {cast = {from = 6, to = 6}},
     golem_cast = {cast = {from = 7, to = 7}},

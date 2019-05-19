@@ -41,15 +41,15 @@ def load_json(path):
     f.close()
     return data
 
-def json2im(data):
-    path = data['meta']["image"]
+def json2im(data, json_path):
+    path = os.path.join(os.path.dirname(json_path), data['meta']["image"])
     return cv2.imread(path, -1)
 
 def load_im(path):
     extension = os.path.splitext(path)[1]
     if extension == '.json':
         j = load_json(path)
-        return json2im(j)
+        return json2im(j, path)
     elif extension == '.png':
         return cv2.imread(path, -1)
     else:
